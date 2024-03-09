@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Authorized Navigation</title>
+<link rel="stylesheet" href="css/style.css"> 
+<style>
+    /* Hide the navigation bar by default */
+    nav {
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <body style="background-image:url(images/background.gif)">
+<div style="text-align: center;">
+
+    <nav id="navbar">
+        <div class="container">
+           <ul class="nav">
+               <li><a href="index.html" target="_blank" onclick="alert('Thank you for visiting this website. I hope you have had a wonderful time! Thanks for visiting -Duck')">Security</a></li>
+               <li><a href="blab.html">Index</a></li>
+               <li><a href="classes.html">Classes</a></li>
+               <li><a href="contact.html">Contacts</a></li>
+               <li><a href="intrests.html">Intrests</a></li>
+           
+           </ul>
+       </div>
+
+       <h1 style="text-align: center; color:cyan" >If you click the "Security" tab once inside the website, it will log you out. Thanks-Duck</h1>
+   </nav>
+
+<h1>Welcome!</h1>
+<h1>Hello there! I am Duck, the AI assistant for Mr. William Chen! Please, enter your name so that we can verify your identity to be sure you are authorized to access this website.</h1>
+
+
+<div style="color:beige" id="authorization">
+    <label for="name">Please enter your full name please:</label>
+    <input type="text" id="name">
+    <button onclick="authorize()">Authorize</button>
+</div>
+
+
+
+<img src="images/aisecurity.jpg" width="500 ">
+
+
+
+
+
+
+</div>
+<script>
+// Define allowed names
+const allowedNames = [
+    "Sarah Hollingshead",
+    "John John",
+    "Elaina Guan",
+    "Spencer Johnston",
+    "Tarek Rifaat",
+    "Haosen Tang",
+
+];
+
+// Function to check if a name is allowed
+function isNameAllowed(name) {
+    return allowedNames.includes(name);
+}
+
+// Function to authorize permission
+function authorize() {
+    var inputName = document.getElementById("name").value;
+    if (inputName) {
+        if (isNameAllowed(inputName)) {
+            // If name is allowed, show the navigation bar
+            document.getElementById("navbar").style.display = "block";
+            document.getElementById("authorization").style.display = "none";
+            alert("Welcome, " + inputName + "! You are now able to explore the rest of this website!");
+        } else {
+            alert("Sorry, your name is not allowed.");
+        }
+    } else {
+        alert("Please enter your name.");
+    }
+}
+</script>
+
+
+</body>
+</html>
